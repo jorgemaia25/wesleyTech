@@ -174,6 +174,35 @@ const produtos = [
     },
 ];
 
+// Definir o vetor com os caminhos das imagens
+const imagens = [
+
+   {id: 1, 
+    imag :"public/images/products/product-1.png"
+   },
+
+   {id:2, 
+    imag: "/images/products/produto-2.png"
+   },
+
+   {id:3, 
+    imag: "/images/products/produto-3.png"
+    },
+
+   {id: 4, 
+    imag:"/images/products/produto-4.png",
+    },   
+    
+   {id: 5,
+    imag:"/images/products/roduto-5.png",
+    },
+
+   {id: 6,
+    imag: "/images/products/produto-6.png",
+    },    
+];
+
+
 //Rota de Listagem de produtos
 app.get("/listaprodutos", (req, res) => {
     res.send(produtos);
@@ -190,6 +219,13 @@ app.get("/produtos", authMiddleware, (req, res) => {
 // Rota protegida - Cadastro
 app.get("/cadastro", authMiddleware, (req, res) => {
     res.render("cadastro", {
+        user: req.session.user,
+    });
+});
+
+// Rota protegida - Sobre
+app.get("/sobre", authMiddleware, (req, res) => {
+    res.render("sobre", {
         user: req.session.user,
     });
 });
