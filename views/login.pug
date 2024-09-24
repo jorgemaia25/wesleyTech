@@ -10,9 +10,14 @@ block content
       form.pure-form.pure-form-stacked(id="loginForm")
         fieldset
           label(for="email") Email:
-          input(type="email", id="email", name="email", required)
+          input(type="email", id="email", name="email", placeholder="wesley@gmail.com" required)
           label(for="password") Senha:
-          input(type="password", id="password", name="password", required)
+          input(type="password", id="password", name="password", placeholder="Wesley$123" required)
+          label(for="stacked-state") Vínculo:
+          select id="stacked-state"
+              <option>Cliente
+              <option>Vendedor
+              <option>Administrador
           button.pure-button.pure-button-primary(id="submit") Entrar
         p#login-message
   script(type="module" src="/js/authentication.js")
